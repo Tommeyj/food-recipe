@@ -66,6 +66,7 @@ body {
 .content img {
     width: 100%;
     height: auto; /* Maintain aspect ratio on small screens */
+
 }
 
 .content .inner-content {
@@ -102,6 +103,7 @@ body {
 .video {
     width: 100%; /* Full width on mobile */
     margin: 2rem auto;
+    padding: 1rem;
 }
 
 .indexContainer {
@@ -159,5 +161,81 @@ body {
 
     .ingredients h4, .instructions h4 {
         font-size: 14px;
+    }
+}
+/* Global Mobile Responsive Styles */
+
+/* Recipe Page Adjustments */
+.content img {
+    width: 100%;
+    max-height: 400px; /* Scale for smaller screens */
+    object-fit: cover;
+}
+
+.content .inner-content {
+    font-size: 1rem; /* Scale down for mobile */
+    padding: 1rem;
+    width: 90%;
+}
+
+.recipe-details {
+    flex-direction: column; /* Stack sections for mobile */
+    align-items: flex-start;
+    gap: 2rem; /* Add space between sections */
+}
+
+.ingredients, .instructions {
+    width: 100%; /* Take full width on mobile */
+}
+
+.video iframe {
+    height: 250px; /* Reduce video height on smaller screens */
+}
+
+/* Media Queries for Specific Breakpoints */
+@media screen and (max-width: 768px) {
+    .content img {
+        max-height: 300px;
+    }
+
+    .content .inner-content {
+        top: 40%; /* Adjust for smaller screens */
+        font-size: 0.9rem;
+    }
+
+    .recipe-details {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .ingredients, .instructions {
+        font-size: 0.85rem; /* Slightly smaller text */
+    }
+
+    .video iframe {
+        height: 200px; /* Adjust for medium-sized mobile screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content img {
+        max-height: 200px;
+    }
+
+    .content .inner-content {
+        top: 30%;
+        font-size: 0.8rem;
+    }
+
+    .recipe-details {
+        gap: 1.5rem;
+    }
+
+    .ingredients, .instructions {
+        font-size: 0.75rem; /* Smaller text for compact screens */
+    }
+
+    .video iframe {
+        height: 180px;
     }
 }
